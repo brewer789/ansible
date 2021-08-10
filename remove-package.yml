@@ -1,0 +1,15 @@
+---
+
+- hosts: deb
+  become: true
+  tasks:
+
+  - name: install flameshot package
+    apt: 
+      name: flameshot
+      state: absent
+
+  - name: add php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: absent
